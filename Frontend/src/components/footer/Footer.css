@@ -1,0 +1,36 @@
+.footer-text {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-text i {
+  margin-right: 1rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 10vh;
+}
+
+footer {
+  flex: 1;
+  margin-bottom: 0;
+  background-color: #006400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 1em 0;
+}
+
+.social-links {
+  margin-top: 1rem;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.fa-brands {
+  color: #fff;
+  margin-left: 1.5rem;
+}

@@ -1,0 +1,50 @@
+.player-card {
+  position: absolute;
+  text-align: center;
+  cursor: move;
+  user-select: none;
+}
+
+.player-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Taille du cercle */
+  height: 40px; /* Taille du cercle */
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px; /* Taille du texte */
+  font-weight: bold;
+  position: relative;
+}
+
+.player-info {
+  margin-top: 5px; /* Espace entre le cercle et les informations */
+  font-size: 12px;
+}
+
+.player-name {
+  font-weight: bold;
+}
+
+.player-position {
+  font-style: italic;
+}
+
+.delete-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,46 @@
+.tactics-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tactic {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tactic h3 {
+  margin-top: 0;
+}
+
+.tactic-actions {
+  margin-top: 10px;
+}
+
+.tactic-actions button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tactic-actions button:hover {
+  background-color: #c82333;
+}
+
+.tactic-actions a {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.tactic-actions a:hover {
+  background-color: #0056b3;
+}

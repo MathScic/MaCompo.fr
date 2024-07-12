@@ -1,0 +1,52 @@
+.team-builder-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-wrapper {
+  display: flex;
+  gap: 10rem;
+}
+
+.field-container,
+.form-container {
+  width: 100%;
+  max-width: 800px; /* Ajuster la largeur selon votre mise en page */
+  margin-bottom: 20px; /* Espacement entre les sections */
+}
+
+.tactics-container {
+  width: 100%;
+  max-width: 800px; /* Ajuster la largeur selon votre mise en page */
+}
+
+.tactics-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tactics-container table th,
+.tactics-container table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.tactics-container table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.tactics-container table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}

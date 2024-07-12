@@ -1,0 +1,61 @@
+.player-form {
+  margin-bottom: 20px;
+}
+
+.player-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.player-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.player-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Ajoutez une marge en bas pour l'espace */
+}
+
+.players-list {
+  margin-top: 1em;
+}
+
+.players-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.players-list li {
+  margin-bottom: 0.5em;
+}
+
+.deleted-button-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cross-delete {
+  background: transparent;
+  border: transparent;
+}
+
+.player-list button {
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

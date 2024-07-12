@@ -1,0 +1,33 @@
+body {
+  background-color: #228b22;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-size: 40px;
+}
+
+p {
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+li {
+  list-style-type: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}

@@ -1,52 +1,51 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
 .team-builder-container {
   display: flex;
   flex-direction: column;
-  gap: 8rem;
   align-items: center;
   padding: 20px;
+  background-color: #696969;
 }
 
 .container-wrapper {
   display: flex;
-  gap: 10rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .field-container,
 .form-container {
-  width: 100%;
-  max-width: 800px; /* Ajuster la largeur selon votre mise en page */
-  margin-bottom: 20px; /* Espacement entre les sections */
+  background: #a9a9a9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tactics-container {
-  width: 100%;
-  max-width: 800px; /* Ajuster la largeur selon votre mise en page */
+  background: #f8f8ff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 6rem;
+  padding: 20px;
 }
 
-.tactics-container table {
-  width: 100%;
-  border-collapse: collapse;
+button {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.tactics-container table th,
-.tactics-container table td {
-  padding: 8px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-.tactics-container table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-.tactics-container table tr:hover {
-  background-color: #f5f5f5;
-}
-
-.team-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
+button:hover {
+  background-color: #1976d2;
 }

@@ -1,46 +1,58 @@
 .tactics-container {
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px; /* Ajustez la largeur maximale selon vos besoins */
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.tactic {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.tactics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-.tactic h3 {
-  margin-top: 0;
+.tactics-table th,
+.tactics-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
-.tactic-actions {
-  margin-top: 10px;
+.tactics-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
 }
 
-.tactic-actions button {
-  margin-left: 10px;
-  padding: 6px 12px;
-  background-color: #dc3545;
-  color: white;
+.tactics-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.edit-button,
+.delete-button {
+  padding: 3px 6px; /* Ajustez la taille des boutons si nécessaire */
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-right: 5px;
 }
 
-.tactic-actions button:hover {
-  background-color: #c82333;
-}
-
-.tactic-actions a {
-  margin-left: 10px;
-  padding: 6px 12px;
-  background-color: #007bff;
+.edit-button {
+  background-color: #4caf50;
   color: white;
-  text-decoration: none;
-  border-radius: 4px;
 }
 
-.tactic-actions a:hover {
-  background-color: #0056b3;
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
 }

@@ -47,10 +47,12 @@
 
 .player-name {
   font-weight: bold;
+  color: white;
 }
 
 .player-position {
   font-style: italic;
+  color: white;
 }
 
 .football-field {

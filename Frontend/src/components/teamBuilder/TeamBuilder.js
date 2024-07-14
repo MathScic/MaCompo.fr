@@ -10,8 +10,15 @@ const TeamBuilder = () => {
   const [players, setPlayers] = useState([]);
   const [savedTactics, setSavedTactics] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [editingPlayerId, setEditingPlayerId] = useState(null); // État pour l'édition du joueur
-  const [editingTacticId, setEditingTacticId] = useState(null); // État pour l'édition de la tactique
+  const [editingTacticId, setEditingTacticId] = useState(null);
+  const [editingPlayerId, setEditingPlayerId] = useState(null);
+
+  useEffect(() => {
+    const storedTactics = localStorage.getItem("savedTactics");
+    if (storedTactics) {
+      setSavedTactics(JSON.parse(storedTactics));
+    }
+  }, []);
 
   const addOrUpdatePlayer = (newPlayer) => {
     if (editingPlayerId) {
@@ -31,23 +38,17 @@ const TeamBuilder = () => {
     setPlayers(players.filter((player) => player.id !== id));
   };
 
-  const saveTactics = ({ id, schema, name, comment }) => {
+  const saveTactics = ({ schema, name, comment }) => {
     const tactic = {
-      id: id || uuidv4(),
+      id: uuidv4(),
       schema,
       name,
       comment,
       players: [...players],
     };
-    if (id) {
-      const updatedTactics = savedTactics.map((t) =>
-        t.id === id ? tactic : t
-      );
-      setSavedTactics(updatedTactics);
-    } else {
-      setSavedTactics([...savedTactics, tactic]);
-    }
-    localStorage.setItem("savedTactics", JSON.stringify(savedTactics));
+    const updatedTactics = [...savedTactics, tactic];
+    setSavedTactics(updatedTactics);
+    localStorage.setItem("savedTactics", JSON.stringify(updatedTactics));
     setPlayers([]);
     setShowModal(false);
   };
@@ -60,9 +61,17 @@ const TeamBuilder = () => {
     localStorage.setItem("savedTactics", JSON.stringify(updatedTactics));
   };
 
+  const updatePlayerPosition = (id, coords) => {
+    setPlayers(
+      players.map((player) =>
+        player.id === id ? { ...player, coords } : player
+      )
+    );
+  };
+
   const editTactic = (tactic) => {
-    setEditingTacticId(tactic.id);
     setPlayers(tactic.players);
+    setEditingTacticId(tactic.id);
     setShowModal(true);
   };
 
@@ -72,13 +81,7 @@ const TeamBuilder = () => {
         <div className="field-container">
           <Field
             players={players}
-            onUpdatePlayerPosition={(id, coords) =>
-              setPlayers(
-                players.map((player) =>
-                  player.id === id ? { ...player, coords } : player
-                )
-              )
-            }
+            onUpdatePlayerPosition={updatePlayerPosition}
             onDeletePlayer={deletePlayer}
             onEditPlayer={setEditingPlayerId}
           />
@@ -93,15 +96,9 @@ const TeamBuilder = () => {
         </div>
       </div>
       {showModal && (
-        <Modal
-          editingTactic={savedTactics.find(
-            (tactic) => tactic.id === editingTacticId
-          )}
-          onSave={saveTactics}
-          onClose={() => setShowModal(false)}
-        />
+        <Modal onSave={saveTactics} onClose={() => setShowModal(false)} />
       )}
-      <div className="tactics-container">
+      <div className="tactics">
         <Tactics
           savedTactics={savedTactics}
           onDelete={deleteTactic}

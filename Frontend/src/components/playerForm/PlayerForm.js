@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "../playerForm/PlayerForm.css";
 
 const PlayerForm = ({ players = [], onAddOrUpdatePlayer, editingPlayerId }) => {
   const [name, setName] = useState("");
@@ -44,7 +45,7 @@ const PlayerForm = ({ players = [], onAddOrUpdatePlayer, editingPlayerId }) => {
 
   return (
     <form className="player-form" onSubmit={handleSubmit}>
-      <div>
+      <div className="input-container">
         <label>Nom : </label>
         <input
           type="text"
@@ -53,7 +54,7 @@ const PlayerForm = ({ players = [], onAddOrUpdatePlayer, editingPlayerId }) => {
           required
         />
       </div>
-      <div>
+      <div className="input-container">
         <label>Poste : </label>
         <input
           type="text"
@@ -62,7 +63,7 @@ const PlayerForm = ({ players = [], onAddOrUpdatePlayer, editingPlayerId }) => {
           required
         />
       </div>
-      <div>
+      <div className="input-container">
         <label>Numéro : </label>
         <input
           type="text"

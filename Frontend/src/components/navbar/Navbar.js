@@ -15,9 +15,9 @@ const Navbar = () => {
         <li>
           <NavLink to="/tactics">Mes Tactiques</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to="/save">Sauvegarder</NavLink>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

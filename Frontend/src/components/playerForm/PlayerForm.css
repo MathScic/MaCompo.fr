@@ -47,6 +47,10 @@
   border: transparent;
 }
 
+.input-container {
+  margin-bottom: 1rem;
+}
+
 .player-list button {
   background: red;
   color: white;

@@ -1,5 +1,11 @@
+h2 {
+  color: white;
+}
+
 .my-tactic-container {
   padding: 20px;
+  background-color: dimgrey;
+  padding-bottom: 21rem;
 }
 
 .tactic-cards {

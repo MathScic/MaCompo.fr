@@ -5,7 +5,8 @@ import "./Banner.css";
 const Banner = () => {
   return (
     <div className="image-container">
-      <img src="../images/Logo.png" className="logo-banner" />
+      <h1>MaCompo.fr</h1>
+      {/* <img src="../images/Logo.png" className="logo-banner" /> */}
       <Navbar />
     </div>
   );

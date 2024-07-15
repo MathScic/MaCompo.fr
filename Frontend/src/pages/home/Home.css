@@ -7,14 +7,20 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  background-color: dimgray;
+  padding-bottom: 8rem;
+  padding-top: 8rem;
 }
 
 h1 {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: white;
   font-size: 40px;
+  background-color: dimgray;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0;
 }
 
 p {

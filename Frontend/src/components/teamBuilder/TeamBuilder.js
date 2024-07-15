@@ -101,9 +101,6 @@ const TeamBuilder = () => {
           editingTactic={editingTactic}
         />
       )}
-      <div className="tactics-container">
-        <Tactics savedTactics={savedTactics} onDelete={deleteTactic} />
-      </div>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import Field from "../field/Field";
 import PlayerForm from "../playerForm/PlayerForm";
@@ -10,15 +11,15 @@ const TeamBuilder = () => {
   const [players, setPlayers] = useState([]);
   const [savedTactics, setSavedTactics] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [editingTacticId, setEditingTacticId] = useState(null);
   const [editingPlayerId, setEditingPlayerId] = useState(null);
+  const location = useLocation();
+  const editingTactic = location.state?.tactic || null;
 
   useEffect(() => {
-    const storedTactics = localStorage.getItem("savedTactics");
-    if (storedTactics) {
-      setSavedTactics(JSON.parse(storedTactics));
+    if (editingTactic) {
+      setPlayers(editingTactic.players || []);
     }
-  }, []);
+  }, [editingTactic]);
 
   const addOrUpdatePlayer = (newPlayer) => {
     if (editingPlayerId) {
@@ -40,13 +41,17 @@ const TeamBuilder = () => {
 
   const saveTactics = ({ schema, name, comment }) => {
     const tactic = {
-      id: uuidv4(),
+      id: editingTactic ? editingTactic.id : uuidv4(),
       schema,
       name,
       comment,
       players: [...players],
     };
-    const updatedTactics = [...savedTactics, tactic];
+
+    const updatedTactics = editingTactic
+      ? savedTactics.map((t) => (t.id === tactic.id ? tactic : t))
+      : [...savedTactics, tactic];
+
     setSavedTactics(updatedTactics);
     localStorage.setItem("savedTactics", JSON.stringify(updatedTactics));
     setPlayers([]);
@@ -67,12 +72,6 @@ const TeamBuilder = () => {
         player.id === id ? { ...player, coords } : player
       )
     );
-  };
-
-  const editTactic = (tactic) => {
-    setPlayers(tactic.players);
-    setEditingTacticId(tactic.id);
-    setShowModal(true);
   };
 
   return (
@@ -96,14 +95,14 @@ const TeamBuilder = () => {
         </div>
       </div>
       {showModal && (
-        <Modal onSave={saveTactics} onClose={() => setShowModal(false)} />
-      )}
-      <div className="tactics">
-        <Tactics
-          savedTactics={savedTactics}
-          onDelete={deleteTactic}
-          onEdit={editTactic}
+        <Modal
+          onSave={saveTactics}
+          onClose={() => setShowModal(false)}
+          editingTactic={editingTactic}
         />
+      )}
+      <div className="tactics-container">
+        <Tactics savedTactics={savedTactics} onDelete={deleteTactic} />
       </div>
     </div>
   );
